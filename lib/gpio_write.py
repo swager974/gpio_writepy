@@ -8,7 +8,6 @@ etatToWrite = bool(int(sys.argv[1:][1]))
 GPIO.setup(pinToWrite,GPIO.OUT)
 try:
     GPIO.output(pinToWrite,etatToWrite)
-    print "PIN "+str(pinToWrite)+" => "+str(etatToWrite)+" OK"
 except KeyboardInterrupt:
     print "  Quit"
     GPIO.cleanup()
