@@ -1,4 +1,5 @@
-# gpio_writepy
+# gpio_writepyBETA
+non fonctionnel au 09/03/2018
 Ecrire sur le GPIO du raspberry avec Gladys et Python
 
 Module pour GLADYS
