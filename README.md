@@ -6,7 +6,7 @@ Utlisation du GPIO du raspberry avec Gladys et Python
 
 ### Prerequisites
 - Raspberry
-- Gladys 3.8.0
+- Gladys >= 3.8.0
 
 https://gladysproject.com/
 
