@@ -21,8 +21,9 @@ Installation du module directement par gladys/modules/Avancé et y mettre ce lie
 
 Exemple pour une lumiere par detecteur infrarouge PIR
 
-La detection est faite par le fichier motion_sensor.py totalement indépendant de gladys, ce dernier est lancé au démarrage du raspberry et s'occupe de la lecture des PINs du GPIO, lorsqu'il y a une detection le fichier python appel un HTTP token sur gladys avec un event exemple "motion-pir"
-http://192.168.0.101/event/create?token=TOKEN_GLADYS&code=motion-pir&user=1&house=1
+La detection est faite par le fichier motion_sensor.py totalement indépendant de gladys, ce dernier est lancé au démarrage du raspberry et s'occupe de la lecture des PINs du GPIO.
+Lorsqu'il y a une detection PIR le fichier python appel un HTTP token sur gladys avec une event :
+http://IP_GLADYS/event/create?token=TOKEN_GLADYS&code=motion-pir&user=1&house=1
 
 
 Pour creer un event, sur gladys->scripts et executer :
@@ -48,4 +49,21 @@ gladys.modules.gpio_write.exec(PIN_GPIO,1); // Remplacer PIN_GPIO par le PIN, [P
 setTimeout(function(){
     gladys.modules.gpio_write.exec(PIN_GPIO,'0');
 }, 120000);
+``````
+
+Pour information voici les codes event d'origine avec gladys :
+
+``````
+back-at-home
+left-home
+wake-up
+going-to-sleep
+gladys-installed
+gladys-updated
+sunrise
+sunset
+enter-area
+devicetype-new-value
+house-mode-changed
+user-seen-at-home
 ```
