@@ -19,7 +19,7 @@ La detection est faite par le fichier python totalement indépendant de gladys, 
 http://192.168.0.101/event/create?token=TOKEN_GLADYS&code=motion-pir&user=1&house=1
 
 Pour creer un event, sur gladys aller dans scripts et executer :
-
+```
 type = {
 "code": "motion-pir",
 "name": "Detection PIR",
@@ -29,13 +29,16 @@ type = {
 "faIcon": "fa fa-briefcase",
 "iconColor": "bg-light-blue",
 };
+
 gladys.eventType.create(type);
+```
 
 Scripts pour un scénario lumieres automatique :
-
+```
 gladys.modules.gpio_write.exec(PIN_GPIO,ETAT); // Remplacer PIN_GPIO par le PIN et ETAT par 0 ou 1
 
 //120 secondes temporisation
 setTimeout(function(){
     gladys.modules.gpio_write.exec('11','0');
 }, 120000);
+```
