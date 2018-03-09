@@ -49,7 +49,7 @@ gladys.modules.gpio_write.exec(PIN_GPIO,1); // Remplacer PIN_GPIO par le PIN, [P
 setTimeout(function(){
     gladys.modules.gpio_write.exec(PIN_GPIO,'0');
 }, 120000);
-``````
+```
 
 Pour information voici les codes event d'origine avec gladys :
 
