@@ -4,6 +4,8 @@ Fonctionnel au 09/03/2018
 
 Utlisation du GPIO du raspberry avec Gladys et Python
 
+## Getting Started
+
 ### Prerequisites
 - Raspberry
 - Gladys >= 3.8.0
@@ -14,7 +16,8 @@ Ce module pour gladys permet d'activer les sorties du GPIO du raspberry
 
 Installation du module directement par gladys/modules/Avancé et y mettre ce lien git.(https://github.com/swager974/gpio_writepy.git)
 
-## Getting Started
+
+## Deployment
 
 Exemple pour une lumiere par detecteur infrarouge PIR
 
@@ -39,10 +42,10 @@ gladys.eventType.create(type);
 
 Scripts pour un scénario lumière automatique :
 ```
-gladys.modules.gpio_write.exec(PIN_GPIO,ETAT); // Remplacer PIN_GPIO par le PIN et ETAT par 0 ou 1
+gladys.modules.gpio_write.exec(PIN_GPIO,1); // Remplacer PIN_GPIO par le PIN, [PIN,ETAT(0:False;1:True)]
 
 //120 secondes temporisation
 setTimeout(function(){
-    gladys.modules.gpio_write.exec('11','0');
+    gladys.modules.gpio_write.exec(PIN_GPIO,'0');
 }, 120000);
 ```
