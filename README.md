@@ -43,7 +43,7 @@ gladys.eventType.create(type);
 
 Scripts pour un scénario lumière automatique :
 ```
-gladys.modules.gpio_write.exec(PIN_GPIO,1); // Remplacer PIN_GPIO par le PIN, [PIN,ETAT(0:False;1:True)]
+gladys.modules.gpio_write.exec(PIN_GPIO,1); // Remplacer PIN_GPIO par le PIN [PIN,ETAT(0:False;1:True)]
 
 //120 secondes temporisation
 setTimeout(function(){
