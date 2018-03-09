@@ -53,7 +53,7 @@ setTimeout(function(){
 
 Pour information voici les codes event d'origine avec gladys :
 
-``````
+```
 back-at-home
 left-home
 wake-up
