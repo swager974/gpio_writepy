@@ -23,7 +23,7 @@ Exemple pour une lumiere par detecteur infrarouge PIR
 
 La détection est faite par le fichier motion_sensor.py totalement indépendant de gladys, ce dernier est lancé au démarrage du raspberry et s'occupe de la lecture des PINs du GPIO.
 
-Lorsqu'il y a une détection PIR le fichier python appel un HTTP token sur gladys avec une event :
+Lorsqu'il y a une détection PIR le fichier python(motion_sensor.py) appel un HTTP token sur gladys avec une event :
 http://IP_GLADYS/event/create?token=TOKEN_GLADYS&code=motion-pir&user=1&house=1
 
 
