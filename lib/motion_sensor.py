@@ -26,11 +26,9 @@ GPIO.setup(GPIO_PIEZO,GPIO.OUT)
 GPIO.setup(GPIO_RELAIS,GPIO.OUT)
 ###########
 GPIO.setup(GPIO_PIR_3_1, GPIO.IN)
-GPIO.setup(GPIO_PIR_3_2, GPIO.IN)
 ###########
 lienGladys = 'http://192.168.0.101:80/event/create?token=f37322a66b39bc85f1227edae8f7383b72b5e8bb&code=motion-pir&house=1&user=1'
-# lien_ispy = 'http://192.168.0.100:8080/'
-# lien_web = 'http://192.168.0.100/'
+
 
 oid_1 = '0'
 oid_2 = '0'
@@ -62,22 +60,6 @@ def start_relais():
 def stop_relais():
 	GPIO.output(GPIO_RELAIS,False)
 	return("Stop Relais...OK.")
-def send_mail(name,time):
-	fromaddr = "swager974@gmail.com"
-	toaddr = "swager974@gmail.com"
-	msg = MIMEMultipart()
-	msg['From'] = fromaddr
-	msg['To'] = toaddr
-	msg['Subject'] = str(time) + "ALERT PIR SENSOR " + name
-	body = str(time) + "Detecteur de mouvement PIR " + name
-	msg.attach(MIMEText(body, 'plain'))
-	server = smtplib.SMTP('smtp.gmail.com', 587)
-	server.starttls()
-	server.login(fromaddr, "zzbjoqhasagggsdz")
-	text = msg.as_string()
-	sending = server.sendmail(fromaddr, toaddr, text)
-	server.quit()
-	return sending
 try:
     print "Waiting for PIR to settle ..."
 	###########
@@ -85,7 +67,6 @@ try:
         current_state_3_1  = 0
     print "  Ready PIR 1"
 	###########
-    send_mail("INITIALISATION DU SCRIPT...",datetime.datetime.now())
 	# Extinction des outputs
     GPIO.output(GPIO_PIEZO,False)
    	# Loop until users quits with CTRL-C
@@ -112,7 +93,6 @@ try:
 	            var = var + 1
 	            GPIO.output(GPIO_PIEZO,False)
 	            time.sleep(0.05)
-            send_mail("PIR 1 ENTJUL",now)
 	elif current_state_3_1 == 0 and previous_state_3_1==1:
              GPIO.output(GPIO_PIEZO,False)
              previous_state_3_1=0
