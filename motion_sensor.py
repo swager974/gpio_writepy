@@ -49,8 +49,6 @@ try:
             eventGladys = urllib2.urlopen(lienGladys)
             print("Alert : ")
             print(eventGladys.read())
-			
-            ticks_r = ticks + timing
             previous_state_3_1 = 1
 			
             while var < 2:
@@ -60,9 +58,9 @@ try:
 	            GPIO.output(GPIO_PIEZO,False)
 	            time.sleep(0.05)
 	elif current_state_3_1 == 0 and previous_state_3_1==1:
-        GPIO.output(GPIO_PIEZO,False)
-        previous_state_3_1=0
-        var = 1
+            GPIO.output(GPIO_PIEZO,False)
+            previous_state_3_1=0
+            var = 1
 #############################################################
 		
 except KeyboardInterrupt:
